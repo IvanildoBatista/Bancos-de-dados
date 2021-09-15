@@ -1,0 +1,23 @@
+-- Função COUNT (contar)
+ -- contando todas as linhas de uma base de dados
+SELECT COUNT(*) FROM ORDERS;
+
+-- contando todas as linhas de uma coluna específica
+SELECT COUNT(ORDER_ID) FROM ORDERS
+
+-- Contando todas as linhas e atribuindo um apelido
+SELECT COUNT(*) AS 'Quantidade de linhas' FROM ORDERS;
+
+--Função WHERE
+-- selectionando as colunas com base em uma valor específico de uma coluna
+SELECT * FROM ORDERS WHERE ORDER_STATUS='delivered' --todas as colunas que os pedidos foram entregues
+
+-- contando o número de registros com base em uma valor específico de uma coluna
+SELECT COUNT(*) FROM ORDERS WHERE ORDER_STATUS = 'delivered'--valores iguais
+SELECT COUNT(*) FROM ORDERS WHERE ORDER_STATUS != 'delivered'--valores diferentes
+
+--Combinando com operadores lógicos AND e OR
+SELECT * FROM ORDERS WHERE ORDER_STATUS = 'delivered' AND ORDER_APPROVED_AT IS NULL; -- com operador and
+SELECT * FROM ORDERS WHERE ORDER_STATUS = 'delivered' OR ORDER_APPROVED_AT IS NULL;-- com operador or
+
+
