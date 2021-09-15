@@ -1,3 +1,3 @@
 # Banco de dados
 
-Repositório com trabalhos e exercícios sobre bancos de dados (*SQL*, *SQLite*, etc).
+Repositório com trabalhos e exercícios sobre bancos de dados (*SQL Server*, *SQLite*, etc).
