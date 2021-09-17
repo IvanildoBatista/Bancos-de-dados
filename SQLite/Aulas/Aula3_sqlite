@@ -1,0 +1,11 @@
+-- Operador LIKE
+
+--Consultando todos os clientes que moram em cidades que começam com 'Mogi'
+SELECT * FROM CUSTOMERS WHERE CUSTOMER_CITY LIKE 'mogi%'
+--Consultando todos os clientes que moram em cidades que não começam com 'Mogi'
+SELECT * FROM CUSTOMERS WHERE CUSTOMER_CITY NOT LIKE 'mogi%'
+
+
+-- Operador GROUP BY
+-- Contando a quantidade de linhas agrupando-as por ID do cliente
+SELECT COUNT(*) FROM ORDERS GROUP BY CUSTOMER_ID
