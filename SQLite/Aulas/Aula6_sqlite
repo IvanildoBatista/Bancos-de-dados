@@ -1,0 +1,23 @@
+-- Classes HAVING e ORDER BY
+-- HAVING serve como filtro para ser usado após o GROUP BY
+-- ORDER BY serve para ordernar a tabela 
+
+--Agrupando a tabela de pagamento pelo tipo de pagamento desde que não haja valores nulos
+SELECT PAYMENT_TYPE, SUM(PAYMENT_VALUE)
+FROM ORDER_PAYMENTS
+GROUP BY PAYMENT_TYPE
+HAVING PAYMENT_TYPE IS NOT NULL;
+-- agrupando a tabela de ordens de pagamentos pelo tipo de pagamwento e sendo os valores maiores que zero
+SELECT PAYMENT_TYPE, SUM(PAYMENT_VALUE)
+FROM ORDER_PAYMENTS
+GROUP BY PAYMENT_TYPE
+HAVING SUM(PAYMENT_VALUE)>0;
+
+--Organizando por ordem alfabética
+SELECT CUSTOMER_ID, CUSTOMER_CITY, CUSTOMER_STATE FROM CUSTOMERS ORDER BY CUSTOMER_CITY --ordem crescente
+SELECT CUSTOMER_ID, CUSTOMER_CITY, CUSTOMER_STATE FROM CUSTOMERS ORDER BY CUSTOMER_CITY DESC--ordem decrescente
+
+--Contando o número de clientes por estado e ordenados crescente e decrescentemente
+SELECT CUSTOMER_STATE, COUNT(*) AS 'Quantidade' FROM CUSTOMERS GROUP BY CUSTOMER_STATE ORDER BY 2;
+SELECT CUSTOMER_STATE, COUNT(*) AS 'Quantidade' FROM CUSTOMERS GROUP BY CUSTOMER_STATE ORDER BY 2 DESC;
+
