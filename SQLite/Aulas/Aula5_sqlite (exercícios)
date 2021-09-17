@@ -1,0 +1,20 @@
+--Exercícios
+
+-- Selecione e conte todas as linhas da tabela ORDERS e dê um apelido para a coluna retornada
+SELECT COUNT(*) FROM ORDERS AS 'Quantidade de linhas' --resultado 99441
+
+-- Selecione todas as linhas da tabela ORDERS com o STATUS diferente de 'delivered' ou que não
+--tenham pedidos aprovados
+SELECT * FROM ORDERS WHERE ORDER_STATUS != 'delivered' OR  ORDER_STATUS != 'approved'
+
+--Selecione apenas as linhas únicas da tabela ORDERS e apenas as colunas CUSTOMER_ID, ORDER_ID e ORDER_APPROVED_AT
+-- e dê apelidos as colunas retornadas
+SELECT CUSTOMER_ID AS 'ID do cliente', ORDER_ID AS 'ID do Pedido', ORDER_APPROVED_AT AS 'Pedido aprovado' FROM ORDERS
+
+--Selecione todas os clientes cuja cidade não inicia com nome 'franca'
+SELECT * FROM CUSTOMERs WHERE CUSTOMER_CITY NOT LIKE 'franca%'
+
+--Selecione as linhas únicas da tabela ORDER e apresente apenas os dados da coluna ORDER_STATUS
+SELECT DISTINCT ORDER_STATUS FROM ORDERS
+
+
