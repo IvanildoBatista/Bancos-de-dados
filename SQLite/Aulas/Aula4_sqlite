@@ -1,0 +1,17 @@
+-- Funções de Estatísticas descritivas
+
+-- SUM() - usada para somar valores de um banco de dados
+--somando os valores de pagamento e agrupando-os pelos tipos de pagamento
+SELECT PAYMENT_TYPE, SUM(PAYMENT_VALUE) FROM ORDER_PAYMENTS GROUP BY PAYMENT_TYPE;
+
+-- AVG()- usada para calcular a média de valores de uma banco de dados
+--calculando a média dos valores de pagamento e agrupando pelo tipo de pagamento
+SELECT PAYMENT_TYPE, AVG(PAYMENT_VALUE) FROM ORDER_PAYMENTS GROUP BY PAYMENT_TYPE;
+
+-- MIN() - retorna o valor mínimo de uma coluna de um banco de dados
+-- calculando os valores mínimos de cada tipo de pagamento
+SELECT PAYMENT_TYPE, MIN(PAYMENT_VALUE) FROM ORDER_PAYMENTS GROUP BY PAYMENT_TYPE;
+
+--MAX() - retorna o valor máximo de um banco de dados
+-- calculando o valor máximo de cada tipo de pagamento
+SELECT PAYMENT_TYPE, MAX(PAYMENT_VALUE) FROM ORDER_PAYMENTS GROUP BY PAYMENT_TYPE;
