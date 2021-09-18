@@ -1,0 +1,20 @@
+--Funções do SGBD
+-- RANDOM() - Retorna um número pseudo-aleatório.
+SELECT RANDOM() AS Random;
+
+-- MIN(), MAX(), SUM(), COUNT(), AVG() - retorna valores mínimo, máximo, soma, conta, e média, respectivamente.
+
+-- PRAGMA TABLE_INFO() - Retorna a estrutura física de uma tabela.
+PRAGMA TABLE_INFO(ORDER_ITEMS);
+-- CAST() - retorna os valores convertidos.
+--PRICE está como texto, usarei a função CAST() para converter para inteiro.
+SELECT CAST(PRICE AS INT) AS PRICE FROM ORDER_ITEMS WHERE CAST(PRICE AS INT)>100
+
+-- UPPER() - retorna caracteres em maiúsculo.
+SELECT UPPER(PRODUCT_CATEGORY_NAME) AS PRODUTOS FROM PRODUCTS;
+
+-- LOWER() - retorna caracteres em minúsculo.
+SELECT LOWER(PRODUCT_CATEGORY_NAME) AS PRODUTOS FROM PRODUCTS;
+
+-- LENGTH() - retorna o tamanho de uma variável (quantidade de caracteres)
+SELECT LENGTH(PRODUCT_CATEGORY_NAME) AS PRODUTOS FROM PRODUCTS;
