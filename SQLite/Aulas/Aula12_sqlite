@@ -1,0 +1,17 @@
+--SUBQUERIES (subconsultas)
+-- São consultas aninhadas ou embutidas em outras consultas. Usadas para restringir ainda mais
+-- os dados a serem recuperados
+
+SELECT *
+FROM PRODUCTS
+        WHERE PRODUCT_ID = (SELECT PRODUCT_ID
+                            FROM ORDER_ITEMS
+                            WHERE CAST(PRICE AS INT) > 500)
+-- com o operador = esse comando só irá retornar o primeiro valor encontrado                            
+
+SELECT *
+FROM PRODUCTS
+        WHERE PRODUCT_ID IN (SELECT PRODUCT_ID
+                            FROM ORDER_ITEMS
+                            WHERE CAST(PRICE AS INT) > 500)
+-- irá retornar mais valores                            

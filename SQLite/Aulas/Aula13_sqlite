@@ -1,0 +1,32 @@
+--DDL - Linguagem de definição de dados
+
+--Criando uma tabela
+CREATE TABLE FUNCIONARIOS(
+ID INT PRIMARY KEY NOT NULL,
+NOME     TEXT     NOT NULL,
+IDADE     INT     NOT NULL,
+SEXO     CHAR(1),
+SALARIO     REAL
+);
+
+-- Consultando a tabela criada
+SELECT * FROM FUNCIONARIOS
+
+-- Renomeando a tabela
+ALTER TABLE FUNCIONARIOS RENAME TO COLABORADORES
+
+-- Adicionando uma coluna
+ALTER TABLE COLABORADORES ADD COLUMN ENDERECO TEXT
+
+-- Consultando a tabela
+SELECT * FROM COLABORADORES
+
+-- Apagando uma tabela
+DROP TABLE COLABORADORES
+
+--Instruções DML (Linguagem de manipulação de dados)
+
+--Inserindo valores
+INSERT INTO FUNCIONARIOS (ID, NOME, IDADE, SEXO, SALARIO) VALUES (1,'José', 55,'M',2000);
+INSERT INTO FUNCIONARIOS (ID, NOME, IDADE, SEXO, SALARIO) VALUES (2,'Maria', 35,'F',3000);
+INSERT INTO FUNCIONARIOS (ID, NOME, IDADE, SEXO, SALARIO) VALUES (3,'Norma', 32,'F',5000);
